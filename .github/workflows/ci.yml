@@ -1,0 +1,14 @@
+name: Synthetic CI fixture
+on: pull_request
+permissions:
+  contents: read
+jobs:
+  quick:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "synthetic quick result"
+  slow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: sleep 90
